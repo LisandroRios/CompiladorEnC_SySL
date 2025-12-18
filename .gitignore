@@ -1,0 +1,28 @@
+# Configuración del editor
+.vscode/
+
+# Archivos compilados de C
+*.o
+*.obj
+*.exe
+*.out
+
+# Carpetas de compilación y binarios
+/build/
+/bin/
+
+# Archivos temporales y de respaldo
+*~
+*.swp
+*.swo
+*.tmp
+*.log
+*.bak
+
+# Archivos generados por Graphviz
+*.svg
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+

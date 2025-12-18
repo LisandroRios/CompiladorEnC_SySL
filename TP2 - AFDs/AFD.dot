@@ -1,0 +1,41 @@
+digraph AFD {
+    rankdir=LR;
+    size="8";
+
+    // Estados de aceptación
+    node [shape = doublecircle]; Q1 Q2 Q4 Q5;
+
+    // Estado de rechazo y otros
+    node [shape = circle];
+    Q0 [label="Q0"];
+    Q1 [label="Q1"];
+    Q2 [label="Q2"];
+    Q3 [label="Q3"];
+    Q4 [label="Q4"];
+    Q5 [label="Q5"];
+    QE [label="QE"];
+
+    // Transiciones
+    Q0 -> Q1 [label="0"];
+    Q0 -> Q2 [label="[1-9]"];
+    Q0 -> QE [label="otro"];
+
+    Q1 -> Q5 [label="0|[1-7]"];
+    Q1 -> QE [label="[8-9]"];
+    Q1 -> Q3 [label="x|X"];
+    Q1 -> QE [label="otro"];
+
+    Q2 -> Q2 [label="[0-9]"];
+    Q2 -> QE [label="otro"];
+
+    Q3 -> Q4 [label="[0-9a-fA-F]"];
+    Q3 -> QE [label="otro"];
+
+    Q4 -> Q4 [label="[0-9a-fA-F]"];
+    Q4 -> QE [label="otro"];
+
+    Q5 -> Q5 [label="[0-7]"];
+    Q5 -> QE [label="otro"];
+
+    QE -> QE [label="cualquiera"];
+}
